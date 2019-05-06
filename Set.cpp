@@ -2,16 +2,14 @@
 #include <iostream>
 using namespace std;
 
-//#include <string>
-
-Set::Set()
+Set::Set()  //constructor
 : m_size(0)
 {
     head = nullptr;
     tail = nullptr;
 }
 
-bool Set::insert(const ItemType& value)
+bool Set::insert(const ItemType& value) //insert item in set
 {
     if (contains(value))
         return false;
@@ -61,7 +59,7 @@ bool Set::insert(const ItemType& value)
     return false;
 }
 
-bool Set::erase(const ItemType& value)
+bool Set::erase(const ItemType& value)  //delete item from set
 {
     Node *p = head;
     for (; p != nullptr && p->data != value; p = p->next) //go through the linked list
@@ -124,7 +122,7 @@ bool Set::get(int pos, ItemType& value) const
     return false;
 }
 
-void Set::swap(Set& other)
+void Set::swap(Set& other) //swap two sets with each other
 {
     Node *temp;
     temp = head;
@@ -164,7 +162,7 @@ Set::~Set() //destructor
     
 }
 
-Set::Set(const Set& other)
+Set::Set(const Set& other)  
 : m_size(other.m_size)
 {
     Node *p;
@@ -183,7 +181,7 @@ Set::Set(const Set& other)
     }
 }
 
-Set& Set::operator=(const Set& rhs)
+Set& Set::operator=(const Set& rhs)  //assignment operator
 {
     ItemType traverse;
     while (m_size > 0)
