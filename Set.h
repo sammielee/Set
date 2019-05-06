@@ -4,10 +4,8 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-// Later in the course, we'll see that templates provide a much nicer
-// way of enabling us to have Sets of different types.  For now,
-// we'll use a type alias.
 
+// use a type alias
 using ItemType = std::string;
 
 class Set
